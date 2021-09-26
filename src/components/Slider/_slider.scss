@@ -1,0 +1,124 @@
+$circle-circumstance: (2 * (22 / 7) * 40);
+
+#pomodoro {
+  background-color: #141c27;
+  box-shadow: 9px 9px 16px rgba(0, 0, 0, 0.24),
+    -4px -4px 16px rgba(73, 73, 73, 0.4);
+  border-radius: 16px;
+  width: 340px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 10px 20px 10px;
+}
+
+#pomodoro--title {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 28px;
+  color: #ffffff;
+  margin-bottom: 24px;
+  margin-top: 20px;
+}
+
+#pomodoro--center {
+  display: flex;
+  justify-content: center;
+}
+
+.circular-progress {
+  position: relative;
+  display: inline-block;
+  width: 244px;
+  height: 244px;
+  border-radius: 50%;
+  svg {
+    transform: rotate(270deg);
+  }
+  circle {
+    stroke-width: 5;
+    fill: none;
+    stroke-linecap: round;
+  }
+  circle:nth-of-type(1) {
+    stroke: rgba(224, 70, 215, 0.2);
+  }
+  circle:nth-of-type(2) {
+    stroke: #e046d7;
+    stroke-dasharray: $circle-circumstance;
+    stroke-dashoffset: ($circle-circumstance);
+  }
+
+  #pct {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 65px;
+    line-height: 76px;
+    color: #e046d7;
+  }
+}
+
+#slider {
+  margin: 0 50px;
+  width: 50%;
+  &::-moz-range-thumb {
+    background-color: #d8503a;
+  }
+  &::-webkit-slider-thumb {
+    background-color: #d8503a;
+  }
+  &::-ms-thumb {
+    background-color: #d8503a;
+  }
+
+  &:focus {
+    &::-moz-range-thumb {
+      box-shadow: 0 0 0 1px #fff, 0 0 0 0.2rem rgba(#d8503a, 0.25);
+    }
+    &::-webkit-slider-thumb {
+      box-shadow: 0 0 0 1px #fff, 0 0 0 0.2rem rgba(#d8503a, 0.25);
+    }
+    &::-ms-thumb {
+      box-shadow: 0 0 0 1px #fff, 0 0 0 0.2rem rgba(#d8503a, 0.25);
+    }
+  }
+}
+
+.buttons {
+  width: 330px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.emerald {
+  background: #172030;
+  border-radius: 8px;
+  width: 244px;
+  height: 40px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+.emerald:hover {
+  color: #e046d7;
+  box-shadow: 9px 9px 16px rgba(0, 0, 0, 0.24),
+    -4px -4px 16px rgba(73, 73, 73, 0.4);
+}
